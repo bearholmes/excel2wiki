@@ -43,12 +43,7 @@ top: 20px;
 right: 10px
 }
 
-.on {
-display:block
-}
-.off {
-display:none
-}
+
 #content{
 position:relative;
 z-index:10
@@ -91,13 +86,14 @@ resize: vertical
 #content textarea:focus{
 border: 3px solid #5E8EFA
 }
-#content .option_box {
-display:block;
+#content #contBox {
+
 position:relative;
 height:35px;
 margin:0 10px
 }
-#content .option_box .tran_btn{
+
+#content #contBox .tran_btn{
 display:inline;
 overflow: hidden;
 width: 60px;
@@ -115,12 +111,52 @@ text-shadow: 0 1px 0 #C00000;
 color:#fff;
 cursor: pointer
 }
-#content .option_box .opt {
+#content #contBox .opt {
 display:block;
 position: absolute;
 text-shadow: 1px 1px 0 #CCCCCC;
 top:3px;
 left: 80px
+}
+#content #contBox .on {
+display:block
+}
+#content #contBox .off {
+ display:none
+}
+#msg {
+height:35px;
+margin:0 10px
+}
+#msg .on {
+display:block
+}
+#msg .off {
+display:none
+}
+#msg .back_btn{
+float:right;
+display:inline;
+overflow: hidden;
+width: 60px;
+border: 2px solid #526002;
+border-radius: 4px;
+background-color: #ACC800;
+background: -webkit-linear-gradient(top,#ACC800 0,#526002 100%);
+background: -moz-linear-gradient(top,#ACC800 0,#526002 100%);
+background: -ms-linear-gradient(top,#ACC800 0,#526002 100%);
+background: -o-linear-gradient(top,#ACC800 0,#526002 100%);
+background: linear-gradient(to bottom,#ACC800 0,#526002 100%);
+font-weight: bold;
+-webkit-font-smoothing: antialiased;
+color:#fff;
+cursor: pointer
+}
+.on {
+display:block
+}
+.off {
+ display:none
 }
 .succeed {display:inline-block;width:16px;height:16px;margin-top:3px;background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABjklEQVQ4EWNkQAPcpkJp7Kp8Ltx6gqHIUl8vvV/98/anPV9Pv5uFLM4I4zByMAmKpajsZpPhNoaJYaN/Pfl69tWcO67/f/x7D5IHGwDSLFmmfZeZi0UQmyZ0sb/f/rx/3nVVGWQIE0gSZDOxmkHqQWpBesBskJ95LETTQBx8gIedh4GNhY3h199fYGXMfGxSfz/+es7M7ynVwSrMroRPs7qYGsPCkAlADzMznH92CaGUlYmTiRMY4ggRBgaQTcgApHlD9DwGDVFVhjjDYGQpBpBecBggi8YYhjJ0ezWAhQJ1fBh2J65g4GbjYrjy8jqD/awAZKVgNgu6SKF1KgMnCwdYOFzXD0wvvbieoXJHM7pSMB/DBeuubkfRXLe3B6dmkEJmNnluG+RA3HvnEMPNt/cYbBUsGAq21jGsvrQRbCA24jswZTKColEoWH4mNgWExN6tfZjOBErboORJSDG6PEgPSC84DEBpG5Q80RXh4oPUgvSA5MEGgNI0KG0T4xKQGlg+ABkAz40gDgiQmp0BQ16bzd1IdeoAAAAASUVORK5CYII=')}
 </style>
@@ -133,11 +169,16 @@ left: 80px
 	<span class="subtext">엑셀 표를 위키로</span>
 	</div>
 	<div id="content">
-		<div id="contBox" class="option_box">
+		<div id="contBox" class="on">
 			<span class="opt">
-			<input type="checkbox" id="optionTh" name="optionTh" value="on" checked> <label for="optionTh">제목행 포함</label>
+				<input type="checkbox" id="optRow" name="optRow" value="on" checked> <label for="optRow">제목행 포함</label>
+				<input type="checkbox" id="optCol" name="optCol" value="on"> <label for="optCol">제목열 포함</label>
 			</span>
-			<button class="tran_btn" accesskey="s">변환</button>
+			<button id="tran_btn" class="tran_btn" accesskey="s">변환</button>
+		</div>
+		<div id="msg" class="off">
+			<span class="succeed"></span>&nbsp;&nbsp;<strong>Complete</strong>&nbsp;&nbsp;-&nbsp;&nbsp;변환완료 :) 
+			<button id="back_btn" class="back_btn" accesskey="c">초기화</button>
 		</div>
 		<div id="contentBefore" class="on">
 			<div class="big_box">
