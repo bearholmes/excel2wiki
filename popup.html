@@ -4,161 +4,37 @@
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 <title>Excel to Wiki</title>
 <style>
-body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, textarea, p, blockquote, th, td, input, select, textarea, button {
-margin:0;
-padding:0
-}
-body, th, td, input, select, textarea, button {
-font-family:'Malgun Gothic','맑은 고딕',dotum,'돋움',sans-serif;
-font-size:14px;
-line-height:1.5
-}
+	body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, textarea, p, blockquote, th, td, input, select, textarea, button {margin:0;padding:0}
+	body, th, td, input, select, textarea, button {font-family:'Malgun Gothic','맑은 고딕',dotum,'돋움',sans-serif;font-size:14px;line-height:1.5}
 
-body {width:400px;height:300px;
-background-color:#F8F8F8
-}
-#wrap{
-display:block;
-width:400px;
-}
-#header {
-position:relative;
-width:400px;
-height:42px;
-margin-bottom:8px;
-border-top:1px solid #434753;
-border-bottom:1px solid #191B22;
-background-color:#3D414D
-}
-#header h1{
-padding:4px 0 0 10px;
-font-size:24px;
-color:#fff
-}
-#header .subtext{
-position: absolute;
-font-size: 12px;
-color: #fff;
-top: 20px;
-right: 10px
-}
+	.on {display:block}
+	.off {display:none}
 
+	body {width:400px;height:300px;background-color:#F8F8F8}
+	#wrap{display:block;width:100%}
+	#header {position:relative;width:100%;height:42px;margin-bottom:8px;border-top:1px solid #434753;border-bottom:1px solid #191B22;background-color:#3D414D}
+	#header h1{padding:4px 0 0 10px;font-size:24px;color:#fff}
+	#header .subtext{position:absolute;font-size:12px;color:#fff;top:20px;right:10px}
+	#content{position:relative}
+	#content h2{padding:5px 0 0 10px;font-size:18px;color:#3D414D}
+	#content .content_before {width:390px;padding:0 5px 20px 5px}
+	#content .content_after {width:390px;padding:0 5px 20px 5px}
+	#content .big_box{position:relative;width:398px;border:1px solid #ACADB0;border-radius:4px;background-color:#fff}
+	#content .big_box .desc_tip{position: absolute;top:15px;right:14px;font-size:12px;}
+	#content textarea{display:block;width:360px;height:140px;margin:10px auto;padding:5px;border:1px solid #ACADB0;resize:vertical}
+	#content textarea:focus{border: 3px solid #5E8EFA}
+	#content #contBox {position:relative;height:35px;margin:0 10px}
+	#content #contBox .tran_btn{display:inline;overflow:hidden;width: 60px;border:2px solid #D04040;border-radius:4px;background-color: #F15F5F;background:-webkit-linear-gradient(top,#F15F5F 0,#B03C33 100%);background:linear-gradient(to bottom,#F15F5F 0,#B03C33 100%);font-weight: bold;text-shadow: 0 1px 0 #C00000;-webkit-font-smoothing:antialiased;color:#fff;cursor:pointer}
+	#content #contBox .opt {display:block;position:absolute;text-shadow:1px 1px 0 #CCCCCC;top:3px;left:80px}
+	#content #contBox .on {display:block}
+	#content #contBox .off {display:none}
+	#msg {height:35px;margin:0 10px}
+	#msg .on {display:block}
+	#msg .off {display:none}
+	#msg .back_btn{float:right;display:inline;overflow:hidden;width:60px;border:2px solid #166625;border-radius: 4px;
+	background-color: #1D8831;background: -webkit-linear-gradient(top,#56A665 0,#1D8831 100%);background: linear-gradient(to bottom,#56A665 0,#1D8831 100%);font-weight:bold;-webkit-font-smoothing:antialiased;color:#fff;cursor: pointer}
 
-#content{
-position:relative;
-z-index:10
-}
-#content h2{
-padding:5px 0 0 10px;
-font-size:18px;
-color:#3D414D
-}
-#content .content_before {
-width:390px;
-padding: 0 5px 20px 5px
-}
-#content .content_after {
-width:390px;
-padding: 0 5px 20px 5px
-}
-#content .big_box{
-position:relative;
-width:398px;
-border: 1px solid #ACADB0;
-border-radius: 4px;
-background-color: #fff
-}
-#content .big_box .desc_tip{
-position: absolute;
-top: 15px;
-right: 14px;
-font-size: 12px;
-}
-#content textarea{
-display:block;
-width:360px;
-height: 140px;
-margin: 10px auto;
-padding:5px;
-border:1px solid #ACADB0;
-resize: vertical
-}
-#content textarea:focus{
-border: 3px solid #5E8EFA
-}
-#content #contBox {
-
-position:relative;
-height:35px;
-margin:0 10px
-}
-
-#content #contBox .tran_btn{
-display:inline;
-overflow: hidden;
-width: 60px;
-border: 2px solid #D04040;
-border-radius: 4px;
-background-color: #F15F5F;
-background: -webkit-linear-gradient(top,#F15F5F 0,#B03C33 100%);
-background: -moz-linear-gradient(top,#F15F5F 0,#B03C33 100%);
-background: -ms-linear-gradient(top,#F15F5F 0,#B03C33 100%);
-background: -o-linear-gradient(top,#F15F5F 0,#B03C33 100%);
-background: linear-gradient(to bottom,#F15F5F 0,#B03C33 100%);
-font-weight: bold;
-text-shadow: 0 1px 0 #C00000;
--webkit-font-smoothing: antialiased;
-color:#fff;
-cursor: pointer
-}
-#content #contBox .opt {
-display:block;
-position: absolute;
-text-shadow: 1px 1px 0 #CCCCCC;
-top:3px;
-left: 80px
-}
-#content #contBox .on {
-display:block
-}
-#content #contBox .off {
- display:none
-}
-#msg {
-height:35px;
-margin:0 10px
-}
-#msg .on {
-display:block
-}
-#msg .off {
-display:none
-}
-#msg .back_btn{
-float:right;
-display:inline;
-overflow: hidden;
-width: 60px;
-border: 2px solid #526002;
-border-radius: 4px;
-background-color: #ACC800;
-background: -webkit-linear-gradient(top,#ACC800 0,#526002 100%);
-background: -moz-linear-gradient(top,#ACC800 0,#526002 100%);
-background: -ms-linear-gradient(top,#ACC800 0,#526002 100%);
-background: -o-linear-gradient(top,#ACC800 0,#526002 100%);
-background: linear-gradient(to bottom,#ACC800 0,#526002 100%);
-font-weight: bold;
--webkit-font-smoothing: antialiased;
-color:#fff;
-cursor: pointer
-}
-.on {
-display:block
-}
-.off {
- display:none
-}
-.succeed {display:inline-block;width:16px;height:16px;margin-top:3px;background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABjklEQVQ4EWNkQAPcpkJp7Kp8Ltx6gqHIUl8vvV/98/anPV9Pv5uFLM4I4zByMAmKpajsZpPhNoaJYaN/Pfl69tWcO67/f/x7D5IHGwDSLFmmfZeZi0UQmyZ0sb/f/rx/3nVVGWQIE0gSZDOxmkHqQWpBesBskJ95LETTQBx8gIedh4GNhY3h199fYGXMfGxSfz/+es7M7ynVwSrMroRPs7qYGsPCkAlADzMznH92CaGUlYmTiRMY4ggRBgaQTcgApHlD9DwGDVFVhjjDYGQpBpBecBggi8YYhjJ0ezWAhQJ1fBh2J65g4GbjYrjy8jqD/awAZKVgNgu6SKF1KgMnCwdYOFzXD0wvvbieoXJHM7pSMB/DBeuubkfRXLe3B6dmkEJmNnluG+RA3HvnEMPNt/cYbBUsGAq21jGsvrQRbCA24jswZTKColEoWH4mNgWExN6tfZjOBErboORJSDG6PEgPSC84DEBpG5Q80RXh4oPUgvSA5MEGgNI0KG0T4xKQGlg+ABkAz40gDgiQmp0BQ16bzd1IdeoAAAAASUVORK5CYII=')}
+	.succeed {display:inline-block;width:16px;height:16px;margin-top:3px;background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABjklEQVQ4EWNkQAPcpkJp7Kp8Ltx6gqHIUl8vvV/98/anPV9Pv5uFLM4I4zByMAmKpajsZpPhNoaJYaN/Pfl69tWcO67/f/x7D5IHGwDSLFmmfZeZi0UQmyZ0sb/f/rx/3nVVGWQIE0gSZDOxmkHqQWpBesBskJ95LETTQBx8gIedh4GNhY3h199fYGXMfGxSfz/+es7M7ynVwSrMroRPs7qYGsPCkAlADzMznH92CaGUlYmTiRMY4ggRBgaQTcgApHlD9DwGDVFVhjjDYGQpBpBecBggi8YYhjJ0ezWAhQJ1fBh2J65g4GbjYrjy8jqD/awAZKVgNgu6SKF1KgMnCwdYOFzXD0wvvbieoXJHM7pSMB/DBeuubkfRXLe3B6dmkEJmNnluG+RA3HvnEMPNt/cYbBUsGAq21jGsvrQRbCA24jswZTKColEoWH4mNgWExN6tfZjOBErboORJSDG6PEgPSC84DEBpG5Q80RXh4oPUgvSA5MEGgNI0KG0T4xKQGlg+ABkAz40gDgiQmp0BQ16bzd1IdeoAAAAASUVORK5CYII=')}
 </style>
 <script src="popup.js"></script>
 </head>
