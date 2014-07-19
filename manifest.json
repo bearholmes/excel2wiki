@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Excel to Wiki",
-  "version": "0.5",
+  "version": "0.6",
   "description": "Excel Table to Atlassian Wiki Markup",
   "icons": { "16": "e2w_ico_16.png", "128": "e2w_ico_128.png" },
   "browser_action": {
