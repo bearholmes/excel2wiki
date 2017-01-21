@@ -1,0 +1,42 @@
+{
+    "application_title": {
+        "message": "Excel to Wiki",
+        "description": "The title of the application, displayed in the web store."
+    },
+    "application_description": {
+        "message": "Excel Table to Atlassian Wiki Markup",
+        "description": "The description of the application, displayed in the web store."
+    },
+    "sub_title": {
+        "message": "Excel Table to Wiki Markup",
+        "description": "sub title"
+    },
+    "th_row": {
+        "message": "th(row)",
+        "description": "include"
+    },
+    "th_col": {
+        "message": "th(col)",
+        "description": "include"
+    },
+    "btn_tran": {
+        "message": "Convert",
+        "description": "translates"
+    },
+    "btn_reset": {
+        "message": "Reset",
+        "description": "reset"
+    },
+    "inp_help":{
+      "message": "Paste the table you copied from Excel",
+      "description": "placeholder"
+    },
+    "complete_msg":{
+      "message": "Complete",
+      "description": "Complete msg"
+    },
+    "after_msg":{
+      "message": "Paste it into your wiki",
+      "description": "after msg"
+    }
+}

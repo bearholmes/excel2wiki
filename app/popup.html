@@ -1,0 +1,46 @@
+<!doctype html>
+<html data-i18n="lang=@@IETF_lang_tag">
+<head>
+	<meta charset="utf-8" />
+	<title data-i18n="application_title"></title>
+	<link rel="stylesheet" type="text/css" href="css/common.css">
+	<script src="js/popup.js"></script>
+</head>
+<body>
+	<header id="header">
+	<h1 data-i18n="application_title"></h1>
+	<span class="subtext" data-i18n="sub_title"></span>
+	</header>
+	<section id="controll">
+		<div id="contBox" class="on">
+			<span class="opt">
+				<span class="box"><input type="checkbox" id="optRow" name="optRow" value="on" class="chk" checked> <label for="optRow" class="label" data-i18n="th_row"></label></span>
+				<span class="box"><input type="checkbox" id="optCol" name="optCol" value="on" class="chk"> <label for="optCol" class="label" data-i18n="th_col"></label></span>
+			</span>
+			<button id="tran_btn" class="button btn_red" accesskey="s" data-i18n="btn_tran"></button>
+		</div>
+		<div id="msg" class="off">
+			<span class="box"><strong data-i18n="complete_msg"></strong> &nbsp;&nbsp; :)</span>
+			<button id="back_btn" class="button btn_green" accesskey="c" data-i18n="btn_reset"></button>
+		</div>
+	</section>
+	<section id="content">
+		<div id="contentBefore" class="on">
+			<div class="box">
+				<label for="inputArea" class="before">Excel</label>
+				<textarea id="inputArea" class="before" data-i18n="placeholder=inp_help"></textarea>
+				<em class="before">Input</em>
+			</div>
+		</div>
+		<div id="contentAfter" class="off">
+			<div class="box">
+				<label for="outputArea" class="after">Wiki Markup</label>
+				<textarea id="outputArea" class="after"></textarea>
+				<em class="after">Output - <span data-i18n="after_msg"></span></em>
+			</div>
+		</div>
+	</section>
+
+	<script type="application/ecmascript" src="js/i18n.js"></script>
+</body>
+</html>

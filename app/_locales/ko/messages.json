@@ -1,0 +1,32 @@
+{
+    "application_title": {
+        "message": "Excel to Wiki"
+    },
+    "application_description": {
+        "message": "Excel 테이블을 Atlassian Wiki 마크업으로 변경"
+    },
+    "sub_title": {
+        "message": "엑셀 표를 위키로"
+    },
+    "th_row": {
+        "message": "제목행 포함"
+    },
+    "th_col": {
+        "message": "제목열 포함"
+    },
+    "btn_tran": {
+        "message": "변환"
+    },
+    "btn_reset": {
+        "message": "초기화"
+    },
+    "inp_help":{
+      "message": "엑셀에서 복사한 표를 붙여 넣으세요"
+    },
+    "complete_msg":{
+      "message": "변환 완료"
+    },
+    "after_msg":{
+      "message": "Wiki에 붙여 넣으세요"
+    }
+}
