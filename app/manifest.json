@@ -1,19 +1,23 @@
 {
-    "manifest_version": 2,
-    "icons": {
-        "16": "e2w_ico_16.png",
-        "128": "e2w_ico_128.png"
-    },
-    "browser_action": {
-        "default_title": "Excel to Wiki",
-        "default_icon": "e2w_ico_16.png",
-        "default_popup": "popup.html"
-    },
-    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
-    "permissions": ["tabs", "http://*/*", "https://*/*"],
-    "homepage_url": "https://github.com/bearholmes/excel2wiki",
+    "manifest_version": 3,
     "name": "__MSG_application_title__",
     "description": "__MSG_application_description__",
-    "default_locale": "en",
-    "version": "0.7"
+    "version": "0.8",
+    "icons": {
+        "16": "icons/16.png",
+        "128": "icons/128.png"
+    },
+    "action": {
+        "default_icon": "icons/16.png",
+        "default_title": "Excel to Wiki",
+        "default_popup": "popup.html"
+    },
+    "permissions": [
+        "tabs"
+    ],
+    "content_security_policy": {
+        "extension_pages": "script-src 'self'; object-src 'self'"
+    },
+    "homepage_url": "https://github.com/bearholmes/excel2wiki",
+    "default_locale": "en"
 }
